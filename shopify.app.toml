@@ -1,0 +1,28 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+name = "theme-app-extension-test"
+client_id = "5257e9b95168090e20894784e12509d5"
+application_url = "https://haven-candles-maintenance-center.trycloudflare.com"
+embedded = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://haven-candles-maintenance-center.trycloudflare.com/auth/callback",
+  "https://haven-candles-maintenance-center.trycloudflare.com/auth/shopify/callback",
+  "https://haven-candles-maintenance-center.trycloudflare.com/api/auth/callback",
+  "https://haven-candles-maintenance-center.trycloudflare.com/.shopify/graphiql/auth/callback"
+]
+
+[webhooks]
+api_version = "2023-10"
+
+[pos]
+embedded = false
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "bigsurmoon.myshopify.com"

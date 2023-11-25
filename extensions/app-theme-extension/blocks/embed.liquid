@@ -1,0 +1,32 @@
+{% assign emb_code = product.metafields.demo.src.value | metafield_tag %}
+<div style="display: flex; justify-content: center; align-items: center;">
+  {% if emb_code %}
+    <iframe
+      style="width:{{ block.settings.width }}px; height:{{ block.settings.height }}px;"
+      src="https://bigsurmoon.com/editor/ModelViewer/?id={{ product.metafields.demo.src.value }}"
+      frameborder="0"
+    ></iframe>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "iframe Embed",
+  "target": "section",
+  "settings": [
+    { "type": "product", "id": "product", "label": "product", "autofill": true },
+    {
+      "type": "number",
+      "id": "width",
+      "label": "Iframe width",
+      "default": 800
+    },
+    {
+      "type": "number",
+      "id": "height",
+      "label": "Iframe height",
+      "default": 480
+    }
+  ]
+}
+{% endschema %}
